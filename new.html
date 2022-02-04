@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <title></title>
+</head>
+
+<body>
+    <form action="create.php" method="post" class="container">
+        <div class="row level-0-row">
+            <div class="column">
+                <h2>Biodata</h2>
+                <h3>Matric Number</h3>
+                <input type="text" placeholder="Matric Number" name="matricNumber" oninput="capitalizeOnInput(this)" pattern="\d|\w{9}" maxlength="9" required />
+                <h3>Names</h3>
+                <div class="row">
+                    <div class="column">
+                        <h4>Surname</h4>
+                        <input type="text" placeholder="Surname" name="surname" required />
+                    </div>
+                    <div class="column">
+                        <h4>First Name</h4>
+                        <input type="text" placeholder="First Name" name="firstName" required />
+                    </div>
+                    <div class="column">
+                        <h4>Other Name(s)</h4>
+                        <input type="text" placeholder="Other Name(s)" name="otherNames" />
+                    </div>
+                </div>
+                <h3>Date of Birth</h3>
+                <input type="date"  name="dateOfBirth" />
+                <h3>Mode of Entry</h3>
+                <div class="row">
+                    <label><input type="radio" name="modeOfEntry" value="UME" required />UME</label>
+                    <label><input type="radio" name="modeOfEntry" value="DE" />DE</label>
+                </div>
+                <h3>Year of Entry</h3>
+                <select id="year-of-entry" name="yearOfEntry"></select>
+                <div class="row">
+                    <div class="column">
+                        <h3>Faculty Name</h3>
+                        <select id="faculty-name" name="facultyName"></select>
+                    </div>
+                    <div class="column">
+                        <h3>Discipline</h3>
+                        <select name="discipline" id="discipline"></select>
+                    </div>
+                </div>
+                <h3>Sex</h3>
+                <div class="row">
+                    <label><input type="radio" name="sex" value="M" required />Male</label>
+                    <label><input type="radio" name="sex" value="F" />Female</label>
+                </div>
+                <h3>Class of Degree</h3>
+                <select id="class-of-degree" name="classOfDegree">
+                    <option>First Class (Hons.)</option>
+                    <option>Second Class (Hons.) Upper Div.</option>
+                    <option>Second Class (Hons.) Lower Div.</option>
+                    <option>Third Class</option>
+                    <option>Pass</option>
+                </select>
+                <h3>Date of Presentation</h3>
+                <input type="date" name="dateOfPresentation" required />
+            </div>
+
+            <div class="column scores-column">
+                <h2>Scores</h2>
+                <div class="row score-component">
+                    <div class="column">
+                        <h4>Course Code</h4>
+                        <input type="text" placeholder="Course Code" name="courseCode" class="input-course"
+                            maxlength="7" pattern="\w\w\w \d\d\d" oninput="capitalizeOnInput(this);"
+                            onkeydown="validateCourseCodeOnKeypress(this, event);" required />
+                    </div>
+                    <div class="column">
+                        <h4>Session</h4>
+                        <select class="input-session" name="session"></select>
+                    </div>
+                    <div class="column">
+                        <h4>Semester</h4>
+                        <div class="row" style="margin-top: .5rem;">
+                            <label><input type="radio" name="semester" class="input-radio-harmattan" value="Harmattan"
+                                    required />Harmattan</label>
+                            <label><input type="radio" name="semester" class="input-radio-rain"
+                                    value="Rain" />Rain</label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h4>Score</h4>
+                        <input type="number" name="score" class="input-score" placeholder="Score" min="0" max="100"
+                            readonly />
+                    </div>
+                    <div class="column">
+                        <h4>Grade Point</h4>
+                        <input type="number" name="gp" class="input-gp" placeholder="Grade Point" min="0" max="5"
+                            required onchange="autoScore(this.parentElement.parentElement);" />
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="success-outline-btn add-score-btn" onclick="addBlankComponent(); document.querySelector('.remove-score-btn').disabled = false;">Add Blank</button>
+                    <button type="button" class="danger-outline-btn remove-score-btn" onclick="removeBlankComponent(document.querySelectorAll('.score-component')[document.querySelectorAll('.score-component').length - 1]);" disabled>Remove Blank</button>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="normal-btn action-btn">Submit</button>
+    </form>
+
+    <script src="disciplines.js"></script>
+    <script src="popup.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('input[name=matricNumber]').value = getParameter('matricNumber');
+        if (getParameter('success') === 'true' && document.referrer) {
+            showNotification(true, "New record added successfully", '/');
+        } else if (getParameter('success') === 'false' && document.referrer) {
+            showNotification(false, "An error has occured", '/');
+        }
+    </script>
+</body>
+
+</html>

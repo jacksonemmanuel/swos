@@ -1,0 +1,16 @@
+const disciplines = [
+    { "Arts": ['Arabic', 'Christian Religious Studies', 'English Language', 'English Literature', 'French', 'History', 'History and International Studies', 'Islamic Studies', 'Music', 'Peace Studies', 'Philosophy', 'Portuguese/English', 'Theatre Arts', 'Yoruba'] }, 
+    { "Basic Clinical Science": ['Chemical Pathology', 'Heamathology And Blood Transfusion', 'Medical Microbiology And Parasitology', 'Pathology And Forensic Medicine', 'Pharmacology Therapeutics And Toxicology', 'Anatomy', 'Medical Biochemistry', 'Physiology'] }, 
+    { "Clinical Science": ['Anaesthesia', 'Behavioural Medicine', 'Community Health And Primary Health Care', 'Medicine and Surgery', 'Nursing', 'Obsterics And Gynaecology', 'Paediatrics And Child Health', 'Radiology', 'Surgery'] },
+    { "College of Medicine": ['Dentistry', 'Medicine and Surgery'] }, 
+    { "Dentistry": ['Child Dental Health', 'Medical Library', 'Oral And Maxilofacial Surgery', 'Oral Pathology And Oral Medicine', 'Preventive Dentistry', 'Restorative Dentistry'] }, 
+    { "Education": ['Accounting Education', 'Arabic Education', 'Biology Education', 'Business Education', 'Chemistry Education', 'Christian Religious Studies Education', 'Computer Science Education', 'Counselling Psychology', 'Early Childhood Education', 'Economics Education', 'Educational Foundations and Counselling Psychology', 'Educational Management', 'Educational Technology', 'English Education', 'French Education', 'Geography Education', 'Health Education', 'History Education', 'Islamic Studies Education', 'Mathematics Education', 'Physical and Health Education', 'Physics Education', 'Political Science Education', 'Yoruba Education'] }, 
+    { "Engineering": ['Aerospace Engineering', 'Chemical and Polymer Engineering', 'Civil Engineering', 'Electronic and Computer Engineering', 'Mechanical Engineering'] },
+    { "Law": ['Business Law', 'Common and Islamic Law', 'Jurisprudence and International Law', 'Law', 'Public and Private Law', 'Public Law'] },
+    { "Management Sciences": ['Accounting', 'Banking and Finance', 'Business Administration', 'Industrial Relations and Personnel Management', 'Insurance', 'Local Government Development and Administration', 'Management Technology', 'Management Technology Unit', 'Marketing', 'Public Administration'] },
+    { "School of Agriculture": ['Agricultural Economics', 'Agricultural Economics and Farm Management', 'Agricultural Extension and Rural Development', 'Agriculture', 'Animal Science', 'Crop Production', 'Crop Production(Crop Option)', 'Crop Production(Soil Option)'] },
+    { "School of Communication": ['Book Publishing and Development', 'Communication Technology', 'Human Communication', 'Journalism', 'Mass Communication', 'Photo Journalism', 'Photo Journalism and Cinematography', 'Public Relations and Advertising', 'Radio and Television Broadcast'] },
+    { "School of Transport": ['Transport Management and Operations', 'Transport Planning and Policy', 'Transport Technology and Infrastructure'] },
+    { "Science": ['Biochemistry', 'Botany', 'Chemistry', 'Computer Science', 'Fisheries', 'Mathematics', 'Microbiology', 'Physics', 'Zoology'] },
+    { "Social Sciences": ['Economics', 'Geography and Planning', 'Political Science', 'Psychology', 'Sociology'] }
+];

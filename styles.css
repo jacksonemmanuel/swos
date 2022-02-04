@@ -1,0 +1,191 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input, button {
+    font-family: inherit;
+}
+button, .btn {
+    padding: .5em 1em;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: .2em;
+    border: none;
+    transition: .2s linear background-color, 
+                .2s linear color;
+}
+a.btn {
+    text-decoration: none;
+}
+input[type="text"], input[type="number"], input[type="date"], select {
+    border-color: black;
+    width: fit-content;
+    background-color: white;
+    border-radius: .2em;
+    /* margin: 1rem 0; */
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+    height: 0;
+    padding: 1.2em;
+}
+input[name^="score"] {
+    width: 4em;
+}
+input[name^="gp"] {
+    width: 8em;
+}
+select {
+    padding: .6em .8em;
+    font-family: inherit;
+}
+p {
+    cursor: default;
+}
+
+h1, h2, h3, h4 {
+    margin: 1.2rem 0;
+    cursor: default;
+}
+
+h4 {
+    margin: 0 0 .5em;
+}
+
+h2 {
+    border-bottom: 2px solid black;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.level-0-row {
+    gap: 5em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    margin: 1em 2em;
+}
+
+.score-component {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #ccc;
+}
+.score-component:nth-last-child(2) {
+    border-bottom: none;
+}
+
+.transparent-btn {
+    background: none;
+}
+.transparent-btn:hover, .transparent-btn:focus {
+    background-color: #eee;
+}
+
+.normal-btn {
+    background-color: rgb(26, 26, 147);
+    color: white;
+}
+.normal-btn:hover, .normal-btn:focus {
+    background-color: rgb(26, 26, 187);
+}
+.normal-outline-btn {
+    background-color: transparent;
+    border: 1px solid rgb(26, 26, 147);
+    color: rgb(26, 26, 147);
+}
+.normal-outline-btn:hover, .normal-outline-btn:focus {
+    background-color: rgb(26, 26, 147);
+    color: white;
+}
+
+.success-btn {
+    background-color: rgb(26, 147, 26);
+}
+.success-btn:hover, .success-btn:focus {
+    background-color: rgb(26, 187, 26);
+}
+.success-outline-btn {
+    background-color: transparent;
+    border: 1px solid rgb(26, 147, 26);
+    color: rgb(26, 147, 26);
+}
+.success-outline-btn:hover, .success-outline-btn:focus {
+    background-color: rgb(26, 147, 26);
+    color: white;
+}
+
+.danger-btn {
+    background-color: rgb(190, 26, 26);
+}
+.danger-btn:hover, .danger-btn:focus {
+    background-color: rgb(230, 26, 26);
+}
+.danger-outline-btn {
+    background-color: transparent;
+    border: 1px solid rgb(190, 26, 26);
+    color: rgb(190, 26, 26);
+}
+.danger-outline-btn:hover, .danger-outline-btn:focus {
+    background-color: rgb(190, 26, 26);
+    color: white;
+}
+.danger-outline-btn:disabled {
+    color: rgb(190, 90, 90);
+    border-color: rgb(190, 90, 90);
+}
+.danger-outline-btn:disabled:hover {
+    cursor: default;
+    background-color: initial;
+}
+
+.action-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+}
+
+.horizontal-center-all * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.remove-btn, .close-btn {
+    margin-left: auto;
+    padding: .1px 6px;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1.5rem;
+    align-self: flex-end;
+    border-radius: 50%;
+}
+.remove-btn:hover, .remove-btn:focus {
+    background-color: #ddd;
+}
+
+.score-component .remove-btn {
+    color: rgb(190, 26, 26);
+}
+.score-component .remove-btn:hover, .score-component .remove-btn:focus {
+    background-color: rgb(190, 157, 157);
+}

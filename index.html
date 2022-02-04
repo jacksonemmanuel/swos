@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <title></title>
+</head>
+
+<body>
+    <form method="post" action="findStudent.php" class="container horizontal-center-all">
+        <div class="column">
+            <h3>Matric Number</h3>
+            <input type="text" placeholder="Matric Number" autofocus name="matricNumber" oninput="capitalizeOnInput(this)" pattern="\d|\w{9}" maxlength="9" required />
+            <button type="submit" class="action-btn normal-btn" style="position: initial;">Submit</button>
+        </div>
+    </form>
+
+    <script src="popup.js"></script>
+    <script>
+        if (getParameter('success') === 'true') {
+            if (/new.html/.test(document.referrer)) showNotification(true, "Record added successfully", '/');
+            else if (/edit.php/.test(document.referrer)) showNotification(true, "Record updated successfully", '/'); 
+            else if (/retrieve.php/.test(document.referrer)) showNotification(true, "Record deleted successfully", '/');
+        }
+    </script>
+</body>
+
+</html>
