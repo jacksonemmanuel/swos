@@ -1,2 +1,2 @@
 # swos
-Software for adding students without scores; Lagos State University
+Software for adding students without scores. 
